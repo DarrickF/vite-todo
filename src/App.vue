@@ -9,8 +9,9 @@
 
 </header>
 <main class = "container w-full mt-8 space-y-8">
-<section class = "space-y-4 ">
-<h3 class = "text-3xl font-thin text-green-800">Pending Items</h3>
+<section class = "space-y-4 " v-if = "pendingTodos.length > 0">
+<h3 class = "text-3xl font-thin text-green-800">
+    Pending Items: {{pendingTodos.length}} </h3>
 <ul class ="space-y-4">
     <li 
     v-for = "todo in pendingTodos"
@@ -22,8 +23,9 @@
 
 </ul>
 </section>
-<section class = "space-y-4 ">
-<h3 class = "text-3xl font-thin text-red-800">Completed Items</h3>
+<section class = "space-y-4" v-if = "completedTodos.length > 0">
+<h3 class = "text-3xl font-thin text-red-800">Completed Items: 
+    {{completedTodos.length}}</h3>
 <ul class ="space-y-4">
     <li
     v-for = "todo in completedTodos"
